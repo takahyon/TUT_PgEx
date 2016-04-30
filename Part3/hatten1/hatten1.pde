@@ -1,8 +1,8 @@
-int screen;
-int lasscreen = 1;
+int sc;
+int ls = 1;
 int sx;
 int sy;
-int scolor = 0;
+int co = 0;
 
 
 void setup() {
@@ -10,79 +10,70 @@ void setup() {
 }
 
 void draw() {
-  
-  background(0, 0, 0);
-  noStroke();
-  
-  if (mouseX < 400) {
-    if (mouseY < 300) {
-       screen = 1;
+
+  background(co, co, co);
+  stroke(255,0,0);
+
+  if (mouseX < 400 && mouseY < 300 ){
+       sc = 1;
        sx = 0;
        sy = 0;
-       
-       if (lasscreen == 3) {
-        scolor += 16;
-       } else if (lasscreen == 2) {
-         scolor -= 16;
+
+       if (ls == 3) {
+        co += 16;
+       } else if (ls == 2) {
+         co -= 16;
        }
-    }
-  }
-  
-  if (mouseX > 400){
-    if (mouseY < 300) {
-      screen = 2;
+  } else if (mouseX > 400 && mouseY < 300){
+      sc = 2;
       sx = 400;
       sy = 0;
-      
-      if (lasscreen == 1) {
-        scolor += 16;
-      } else if (lasscreen == 4) {
-         scolor -= 16;
+
+      if (ls == 1) {
+        co += 16;
+      } else if (ls == 4) {
+         co -= 16;
       }
-    }
-  }
-  
-  if (mouseX < 400 ){
-    if (mouseY > 300 ) {
-      screen = 3;
+  } else if (mouseX < 400 && mouseY > 300 ){
+      sc = 3;
       sx = 0;
       sy = 300;
-      
-      if (lasscreen == 2) {
-        scolor += 16;
-      } else if (lasscreen == 1) {
-         scolor -= 16;
+
+      if (ls == 4) {
+        co += 16;
+      } else if (ls == 1) {
+         co -= 16;
       }
-    }
-  }
-  
-  if (mouseX > 400){
-    if (mouseY > 300) {
-      screen = 4;
+  } else if (mouseX > 400 && mouseY > 300){
+      sc = 4;
       sx = 400;
       sy = 300;
-      
-      if (lasscreen == 2) {
-      scolor += 16;
-      } else if (lasscreen == 3) {
-         scolor -= 16;
+
+      if (ls == 2) {
+      co += 16;
+      } else if (ls == 3) {
+         co -= 16;
       }
-    }
   }
-  
-    //カラーが２５５以上０以下にならないように
-    if (scolor > 255) {
-      scolor = 255;
-    } else if (scolor < 0) {
-      scolor = 0;
+
+    if (co > 255) {
+      co = 255;
+    } else if (co < 0) {
+      co = 0;
     }
-    
-    //四角形の描写
-    fill(scolor, scolor, scolor);
+
+    if (co == 0) {
+      fill(0, 0, 0);
+    } else if (co == 255) {
+      fill(255, 255, 255);
+    } else {
+      fill(186, 193, 124);
+    }
+
     rect(sx, sy, 400, 300);
-    
-    //ポインタの描写
-    fill(255 - scolor, 255 - scolor, 255 - scolor);
+
+    noStroke();
+    fill(0, 0, 255);
     ellipse(mouseX, mouseY, 100, 100);
-    lasscreen = screen;
+    ls = sc;
 }
