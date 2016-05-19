@@ -1,13 +1,13 @@
 int tSize = 60;
 
 void setup(){
+  background(255);
   size(800, 600);
   textSize(tSize);
   textAlign(CENTER, CENTER);
 }
 
 void draw(){
-    background(255);
   fill(0, 0, 0);
   if(keyPressed){
     if(key == CODED) {
@@ -26,5 +26,5 @@ void draw(){
       text(key, mouseX, mouseY);
     }
   }
-  
+
 }
