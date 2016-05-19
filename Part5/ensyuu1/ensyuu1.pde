@@ -8,7 +8,7 @@ float calcArea(float fromX, float fromY, float toX, float toY) {
   return hig * wih;
 }
 float calcPos(float from, float to, float alpha) {
-  float pos = (to - from) * alpha;
+  float pos = (to - from) * alpha + from;
   return pos;
 }
 
@@ -23,12 +23,12 @@ void draw() {
 
   float length = dist(width/2, height/2, mouseX, mouseY);
   float area = calcArea(width/2, height/2, mouseX, mouseY);
-  float x11 calcPos(width/2, mouseX, 1.1);
-  float y11 calcPos(height/2, mouseY, 1.1);
-  float x05 calcPos(width/2, mouseX, 0.5);
-  float y05 calcPos(height/2, mouseY, 0.5);
-  float xm01 calcPos(width/2, mouseX, -0.1);
-  float ym01 calcPos(height/2, mouseY, -0.1);
+  float x11 = calcPos(width/2, mouseX, 1.1);
+  float y11 = calcPos(height/2, mouseY, 1.1);
+  float x05 = calcPos(width/2, mouseX, 0.5);
+  float y05 = calcPos(height/2, mouseY, 0.5);
+  float xm01 = calcPos(width/2, mouseX, -0.1);
+  float ym01 = calcPos(height/2, mouseY, -0.1);
 
   fill(0);
   textSize(16);
