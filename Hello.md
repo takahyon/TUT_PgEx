@@ -320,8 +320,8 @@ gibo OSX Windows SublineText Vim Emacs >> .gitignore
 ```
 
 ##転載元
-https://gist.github.com/manabuyasuda/f449b313970c7a51b655
-  よりお借りしました。
+* https://gist.github.com/manabuyasuda/f449b313970c7a51b655
+* よりお借りしました。
 
 ## 参考リンク
 * [GitHub Cheat Sheet（日本語訳）](https://github.com/jposts/github-cheat-sheet)
