@@ -11,14 +11,15 @@ void draw() {
       int mode = 0;
       if(x > mouseX && y > mouseY){
         mode = 0;
-      } else if(x < mouseX && y > mouseY){
+      } else if(x < mouseX && y < mouseY){
         mode = 1;
-      } else if (x < mouseX && y > mouseY){
+      } else if (x > mouseX && y > mouseY){
         mode = 2;
       }
       drawCat(x, y, mode);
     }
   }
+  drawFish();
 }
 
 void drawCat(int x, int y, int mode) {
@@ -50,4 +51,11 @@ void drawCat(int x, int y, int mode) {
   stroke(239, 228, 176);
   strokeWeight(10);
   line(x+tailX[mode%2][0], y+tailY[0], x+tailX[mode%2][1], y+tailY[1]);
+}
+
+void drawFish(){
+  noStroke();
+  fill(150, 200, 250);
+  ellipse(mouseX, mouseY, 50, 20);
+  triangle(mouseX+10,mouseY,mouseX+30,mouseY-10,mouseX+30,mouseY+10);
 }
