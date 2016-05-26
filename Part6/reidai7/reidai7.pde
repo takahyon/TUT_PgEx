@@ -5,7 +5,7 @@ void setup(){
   size(188, 188);
   frameRate(12);
   for(int i = 0; i < num; i++){
-    images[i] = loadImage("run" + i + ".png")
+    images[i] = loadImage("run" + i + ".png");
   }
 }
 
