@@ -16,6 +16,6 @@ void draw(){
   xy[0][1] = mouseY;
 
   for(int i = 0 ; i < xy.length; i++){
-    ellipse(xy[i][0],xy[i][1],width,height);
+    ellipse(xy[i][0],xy[i][1],20,20);
   }
 }
