@@ -12,5 +12,4 @@ void draw(){
   background(255);
   fill(0);
   text(nf(h, 2) + ":" + nf(m, 2) + ":" + nf(s, 2), width/2, height/2);
-
 }
