@@ -3,11 +3,12 @@ import ddf.minim.analysis.*;
 
 Minim minim;
 AudioPlayer player;
-AudioMetaData meta;
+//AudioMetaData meta;
 BeatDetect beat;
 int  r = 200;
 float rad = 70;
-boolean s = false;
+//boolean s = false;
+
 void setup()
 {
   //size(displayWidth, displayHeight);
@@ -15,7 +16,7 @@ void setup()
   size(800,600);
   minim = new Minim(this);
   player = minim.loadFile("../sounddata/wa.mp3");
-  meta = player.getMetaData();
+  //meta = player.getMetaData();
   beat = new BeatDetect();
   player.loop();
   player.play();
@@ -25,9 +26,9 @@ void setup()
 
 void draw()
 {
-  float t = map(mouseX, 0, width, 0, 1);
+  //float t = map(mouseX, 0, width, 0, 1);
   beat.detect(player.mix);
-  fill(#1A1F18, 20);
+  fill(26,31,24,20);
   noStroke();
   rect(0, 0, width, height);
   translate(width/2, height/2);
@@ -66,7 +67,7 @@ void draw()
 }
 
 
-void showMeta() {
+/*void showMeta() {
   int time =  meta.length();
   textSize(50);
   textAlign(CENTER);
@@ -86,11 +87,11 @@ void mousePressed() {
 void keyPressed() {
   if(key=='e')exit();
   if(key=='s')saveFrame("###.jpeg");
-  if(key=='f'&& s==false){
+/*  if(key=='f'&& s==false){
     size(1920,1080);
     noStroke();
 }if(key=='f'&& s==true){
   size(800,600);
-}
+}*/
 
 }

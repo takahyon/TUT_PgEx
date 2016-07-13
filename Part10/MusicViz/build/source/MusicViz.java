@@ -22,11 +22,12 @@ public class MusicViz extends PApplet {
 
 Minim minim;
 AudioPlayer player;
-AudioMetaData meta;
+//AudioMetaData meta;
 BeatDetect beat;
 int  r = 200;
 float rad = 70;
-boolean s = false;
+//boolean s = false;
+
 public void setup()
 {
   //size(displayWidth, displayHeight);
@@ -34,7 +35,7 @@ public void setup()
   
   minim = new Minim(this);
   player = minim.loadFile("../sounddata/wa.mp3");
-  meta = player.getMetaData();
+  //meta = player.getMetaData();
   beat = new BeatDetect();
   player.loop();
   player.play();
@@ -44,9 +45,9 @@ public void setup()
 
 public void draw()
 {
-  float t = map(mouseX, 0, width, 0, 1);
+  //float t = map(mouseX, 0, width, 0, 1);
   beat.detect(player.mix);
-  fill(0xff1A1F18, 20);
+  fill(26,31,24,20);
   noStroke();
   rect(0, 0, width, height);
   translate(width/2, height/2);
@@ -85,7 +86,7 @@ public void draw()
 }
 
 
-public void showMeta() {
+/*void showMeta() {
   int time =  meta.length();
   textSize(50);
   textAlign(CENTER);
@@ -93,7 +94,7 @@ public void showMeta() {
 }
 
 boolean flag =false;
-public void mousePressed() {
+void mousePressed() {
   if (dist(mouseX, mouseY, width/2, height/2)<150) flag =!flag;
 }
 
@@ -105,12 +106,12 @@ public void mousePressed() {
 public void keyPressed() {
   if(key=='e')exit();
   if(key=='s')saveFrame("###.jpeg");
-  if(key=='f'&& s==false){
+/*  if(key=='f'&& s==false){
     size(1920,1080);
     noStroke();
 }if(key=='f'&& s==true){
   size(800,600);
-}
+}*/
 
 }
   public void settings() {  size(800,600); }
